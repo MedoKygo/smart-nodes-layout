@@ -3,7 +3,7 @@ import { BsArrowLeftShort, BsSearch } from "react-icons/bs";
 import { AiFillEnvironment } from "react-icons/ai";
 import {RiDashboardFill} from 'react-icons/ri'
 
-const SideBarTest = () => {
+const SideBar = () => {
   const [open, setOpen] = useState(false);
   let menus = [
     "Dashboard",
@@ -76,4 +76,4 @@ const SideBarTest = () => {
   );
 };
 
-export default SideBarTest;
+export default SideBar;

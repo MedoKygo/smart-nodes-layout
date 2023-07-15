@@ -1,18 +1,18 @@
 import React from "react";
 import {
-  Button,
   Grid,
   GridItem,
-  List,
-  ListItem,
-  UnorderedList,
 } from "@chakra-ui/react";
-import CheckList from "../CheckList/CheckList";
 import NavBar from "./NavBar";
-import SideBarTest from "./SideBarTest";
+import SideBarTest from "./SideBar";
+import CheckList from "../CheckList/CheckList";
+import Create from "../Create/Create";
+import SaveChanges from "../Create/SaveChanges";
+import Group1 from "../Groups/Group1";
 
 const Layout = () => {
   return (
+    <>
     <div className="bg-white  gird place-content-center mb-10">
       <Grid
         templateAreas={`"header header"
@@ -25,78 +25,66 @@ const Layout = () => {
         fontWeight="bold"
       >
         <GridItem pl="2" area={"header"}>
+          {/* Navbar */}
           <NavBar />
         </GridItem>
         <GridItem pl="2" area={"nav"}>
+          {/* Sidebar */}
           <SideBarTest />
         </GridItem>
-        <GridItem bg="white" area={"main"}>
-          
+        <GridItem bg="white" area={"main"} mt={36}>
+          {/* Page */}
+          <CheckList
+        Lists={[
+          {
+            Id: 1,
+            ImageSet: "Set1",
+            Files: "file1",
+            Status: "Completed",
+            LastUsed: 12 - 4 - 2023,
+            Details: 12 - 4 - 2023,
+          },
+          {
+            Id: 2,
+            ImageSet: "Set2",
+            Files: "file2",
+            Status: "In Progress",
+            LastUsed: 12 - 4 - 2023,
+            Details: 12 - 4 - 2023,
+          },
+          {
+            Id: 3,
+            ImageSet: "Set3",
+            Files: "file3",
+            Status: "In Progress",
+            LastUsed: 12 - 4 - 2023,
+            Details: 12 - 4 - 2023,
+          },
+          {
+            Id: 4,
+            ImageSet: "Set4",
+            Files: "file4",
+            Status: "In Progress",
+            LastUsed: 12 - 4 - 2023,
+            Details: 12 - 4 - 2023,
+          },
+          {
+            Id: 5,
+            ImageSet: "Set5",
+            Files: "file5",
+            Status: "In Progress",
+            LastUsed: 12 - 4 - 2023,
+            Details: 12 - 4 - 2023,
+          },
+        ]}
+      />
         </GridItem>
         <GridItem pl="2" area={"footer"} pb={"2rem"}>
-          <UnorderedList justifyContent={"space-between"}>
-            <List
-              width={"5xl"}
-              display={"flex"}
-              justifyContent={"space-between"}
-            >
-              <ListItem>Pages</ListItem>
-              <Button
-                size={"sm"}
-                onClick={() => console.log("Clicked1")}
-                colorScheme="teal"
-                variant="solid"
-              >
-                1
-              </Button>
-              <Button
-                size={"sm"}
-                onClick={() => console.log("Clicked2")}
-                colorScheme="teal"
-                variant="solid"
-              >
-                2
-              </Button>
-              <Button
-                size={"sm"}
-                onClick={() => console.log("Clicked3")}
-                colorScheme="teal"
-                variant="solid"
-              >
-                3
-              </Button>
-              <Button
-                size={"sm"}
-                onClick={() => console.log("Clicked4")}
-                colorScheme="teal"
-                variant="solid"
-              >
-                4
-              </Button>
-              <Button
-                size={"sm"}
-                onClick={() => console.log("Clicked5")}
-                colorScheme="teal"
-                variant="solid"
-              >
-                5
-              </Button>
-              <Button
-                size={"sm"}
-                onClick={() => console.log("Clicked6")}
-                colorScheme="teal"
-                variant="solid"
-              >
-                6
-              </Button>
-              <Button colorScheme="teal" size="sm">
-                Go to
-              </Button>
-            </List>
-          </UnorderedList>
+          {/* Footer */}
         </GridItem>
       </Grid>
     </div>
+    </>
   );
 };
 export default Layout;

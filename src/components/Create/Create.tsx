@@ -1,5 +1,3 @@
-import { FormControl, FormLabel, FormHelperText } from "@chakra-ui/react";
-import { Input } from "postcss";
 import {FiUpload} from 'react-icons/fi'
 import React from "react";
 
